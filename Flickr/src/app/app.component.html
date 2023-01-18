@@ -323,7 +323,8 @@
       <ul style="text-align: left;">
         <li *ngFor="let photo of photos?.photo">
           <!-- [attribut]="expression" : positionner valeur de l'attribut à la valeur de l'expression -->
-          <img class="thumb" [src]="getPhotoUrl(photo)" />
+          <!-- au click on associe l'objet photo qu'on passe au composant enfant <app-photo>, à la photo sur laquelle on a cliqué -->
+          <img class="thumb" [src]="getPhotoUrl(photo)" (click)="photo_courante=photo"/>
           {{photo.title}}
         </li>
       </ul>
@@ -331,6 +332,11 @@
 
   <div>{{copyright}}</div>
   
+</div>
+
+<!-- on appelle le composant enfant photo créé avec 'ng n component photo' et on lui passe la propriété photo_courante -->
+<div class="fixed">
+  <app-photo [photo]="photo_courante"></app-photo>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

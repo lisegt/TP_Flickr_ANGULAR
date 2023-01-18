@@ -2,3 +2,10 @@
     width: 100px;
     height: 100px;
 }
+
+.fixed {
+    position: fixed;
+    top: 200px;
+    right: 200px;
+    left: 200px;
+}

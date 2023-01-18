@@ -16,6 +16,7 @@ export class AppComponent {
   tag = '';
   //propriété pour contenu de liste des photos
   photos: any;
+  photo_courante: any;
 
   //méthode exécutée lors d'un changement d'input, stocke le résultat du get --> objet JSON : photos
   nouveau_mot_cle(): void {
