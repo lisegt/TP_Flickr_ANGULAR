@@ -316,7 +316,17 @@
         si pas de ? : erreur car au chargement de la page "photos" n'est pas initialisé et propriété photos est undefined -->
   <div>Nombre total de photos : {{photos?.total}}</div>
 
+  <!-- on parcourt la liste de photos avec *ngFor, en ciblant photos.photo -->
+  <!-- si la liste des photos est vide, opn n'affiche pas la liste de puces -->
+  <div *ngIf="photos?.total > 0">
+    <div> Liste des photos </div>
+      <ul>
+        <li *ngFor="let photo of photos?.photo">{{photo.title}}</li>
+      </ul>
+  </div>
+
   <div>{{copyright}}</div>
+  
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
