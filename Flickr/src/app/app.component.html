@@ -306,10 +306,13 @@
 <!-- Body -->
 <div style="text-align: center">
   <h1>Ma visionneuse {{title}}</h1>
-  <div>{{copyright}}</div>
+  
 
-  <!-- lier la propriété tag à l'input : on doit aussi ajouter le module FormsModule ds app.module.ts-->
-  <label>Mot clé : </label> <input [(ngModel)]="tag" placeholder="votre mot clé..." />
+  <!-- lier la propriété tag à l'input : on doit aussi ajouter le module FormsModule ds app.module.ts -->
+  <!-- (change) <=> onChange, si changement on appelle méthode -->
+  <label>Mot clé : </label> <input [(ngModel)]="tag" placeholder="votre mot clé..." (change)="nouveau_mot_cle()"/>
+
+  <div>{{copyright}}</div>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

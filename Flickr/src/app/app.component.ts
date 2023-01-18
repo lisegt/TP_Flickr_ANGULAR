@@ -11,4 +11,8 @@ export class AppComponent {
 
   //propriété pour le contenu de l'input
   tag = ""
+
+  nouveau_mot_cle(): void {
+    console.log("le nouveau mot est " + this.tag)
+  }
 }
