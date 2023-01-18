@@ -312,6 +312,10 @@
   <!-- (change) <=> onChange, si changement on appelle méthode -->
   <label>Mot clé : </label> <input [(ngModel)]="tag" placeholder="votre mot clé..." (change)="nouveau_mot_cle()"/>
 
+  <!-- ? permet de ne pas aller chercher une propriété d'un objet indéfini
+        si pas de ? : erreur car au chargement de la page "photos" n'est pas initialisé et propriété photos est undefined -->
+  <div>Nombre total de photos : {{photos?.total}}</div>
+
   <div>{{copyright}}</div>
 </div>
 

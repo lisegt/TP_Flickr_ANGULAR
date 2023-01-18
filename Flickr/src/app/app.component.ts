@@ -14,10 +14,12 @@ export class AppComponent {
 
   //propriété pour le contenu de l'input
   tag = '';
+  //propriété pour contenu de liste des photos
+  photos: any;
 
-  //méthode exécutée lors d'un changement d'input
+  //méthode exécutée lors d'un changement d'input, stocke le résultat du get --> objet JSON : photos
   nouveau_mot_cle(): void {
-    this.getPhotos().subscribe((resp) => console.log(resp.photos.total));
+    this.getPhotos().subscribe((resp) => (this.photos = resp.photos));
   }
 
   //création de l'objet http
