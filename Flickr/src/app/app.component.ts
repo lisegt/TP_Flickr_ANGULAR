@@ -56,4 +56,9 @@ export class AppComponent {
       '&format=json';
     return this.http.get(url).pipe(catchError(this.handleError));
   }
+
+  //retourne construction de l'URL de l'image passée en paramètre
+  getPhotoUrl(photo: any): string {
+    return `http://farm${photo.farm}.static.flickr.com/${photo.server}/${photo.id}_${photo.secret}_s.jpg`;
+  }
 }

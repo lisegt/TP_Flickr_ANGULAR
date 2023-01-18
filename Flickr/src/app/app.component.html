@@ -320,8 +320,12 @@
   <!-- si la liste des photos est vide, opn n'affiche pas la liste de puces -->
   <div *ngIf="photos?.total > 0">
     <div> Liste des photos </div>
-      <ul>
-        <li *ngFor="let photo of photos?.photo">{{photo.title}}</li>
+      <ul style="text-align: left;">
+        <li *ngFor="let photo of photos?.photo">
+          <!-- [attribut]="expression" : positionner valeur de l'attribut à la valeur de l'expression -->
+          <img class="thumb" [src]="getPhotoUrl(photo)" />
+          {{photo.title}}
+        </li>
       </ul>
   </div>
 
