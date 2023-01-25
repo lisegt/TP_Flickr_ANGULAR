@@ -336,7 +336,7 @@
 
 <!-- on appelle le composant enfant photo créé avec 'ng n component photo' et on lui passe la propriété photo_courante -->
 <div class="fixed">
-  <app-photo [photo]="photo_courante"></app-photo>
+  <app-photo *ngIf="photo_courante!==undefined" (click)="photo_courante=undefined" [photo]="photo_courante"></app-photo>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
